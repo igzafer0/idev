@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:idev/view/authenticate/view_test/view/view_test.dart';
 
 void main() {
   runApp(const IdevRun());
@@ -9,6 +10,6 @@ class IdevRun extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.black);
+    return const ViewTest();
   }
 }
