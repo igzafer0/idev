@@ -4,6 +4,9 @@ import 'package:idev/core/init/notifier/theme_notifier.dart';
 import 'package:idev/view/authenticate/view_test/view/view_test.dart';
 import 'package:provider/provider.dart';
 
+import 'core/init/navigation/navigation_route.dart';
+import 'core/init/navigation/navigation_service.dart';
+
 Future<void> main() async {
   await _init();
   runApp(MultiProvider(
@@ -21,7 +24,9 @@ class IdevRun extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: context.watch<ThemeNotifier>().currentTheme,
-        home: const ViewTest());
+      onGenerateRoute: NavigationRoute.instance.generateRoute,
+      navigatorKey: NavigationService.instance.navigatorKey,
+      theme: context.watch<ThemeNotifier>().currentTheme,
+    );
   }
 }
