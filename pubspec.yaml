@@ -23,6 +23,10 @@ dependencies:
   mobx_codegen: ^2.1.1
   build_runner: ^2.3.3
 
+
+  #Provider
+  provider: ^6.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -34,6 +34,7 @@ class _ViewTestState extends BaseState<ViewTest> {
     return Center(
       child: Observer(
         builder: (context) => Text(
+          style: Theme.of(context).textTheme.titleLarge,
           viewModel.number.toString(),
         ),
       ),
@@ -42,7 +43,7 @@ class _ViewTestState extends BaseState<ViewTest> {
 
   FloatingActionButton get floatingActionButtonNumberIncrement {
     return FloatingActionButton(
-      onPressed: () => viewModel.incrementNumber(),
+      onPressed: () => viewModel.changeTheme(),
     );
   }
 }
