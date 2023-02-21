@@ -6,12 +6,10 @@ import 'package:idev/core/init/theme/app_theme_light.dart';
 import '../../constants/enum/app_theme_enum.dart';
 
 class ThemeNotifier extends ChangeNotifier {
-  ThemeData _currentTheme = AppThemeLight.instance.theme;
+  ThemeData _currentTheme = AppThemeDark.instance.theme;
 
-  AppThemes _currenThemeEnum = AppThemes.LIGHT;
+  AppThemes _currenThemeEnum = AppThemes.DARK;
 
-  /// Applicaton theme enum.
-  /// Deafult value is [AppThemes.LIGHT]
   AppThemes get currenThemeEnum => _currenThemeEnum;
 
   ThemeData get currentTheme => _currentTheme;
@@ -25,7 +23,6 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Change your app theme with [currenThemeEnum] value.
   void changeTheme() {
     if (_currenThemeEnum == AppThemes.LIGHT) {
       _currentTheme = AppThemeDark.instance.theme;
