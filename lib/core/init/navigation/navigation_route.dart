@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:idev/core/components/card/not_found_navigation.dart';
-import 'package:idev/view/authenticate/view_test/view/view_test.dart';
+import '../../../view/authenticate/test/view/view_test.dart';
 import '../../constants/navigation/navigation_constants.dart';
 
 class NavigationRoute {

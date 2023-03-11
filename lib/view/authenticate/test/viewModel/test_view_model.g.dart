@@ -25,6 +25,30 @@ mixin _$TestViewModel on _TestViewModelBase, Store {
     });
   }
 
+  late final _$isLoadingAtom =
+      Atom(name: '_TestViewModelBase.isLoading', context: context);
+
+  @override
+  bool get isLoading {
+    _$isLoadingAtom.reportRead();
+    return super.isLoading;
+  }
+
+  @override
+  set isLoading(bool value) {
+    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
+      super.isLoading = value;
+    });
+  }
+
+  late final _$getSampleRequestAsyncAction =
+      AsyncAction('_TestViewModelBase.getSampleRequest', context: context);
+
+  @override
+  Future<void> getSampleRequest() {
+    return _$getSampleRequestAsyncAction.run(() => super.getSampleRequest());
+  }
+
   late final _$_TestViewModelBaseActionController =
       ActionController(name: '_TestViewModelBase', context: context);
 
@@ -42,7 +66,8 @@ mixin _$TestViewModel on _TestViewModelBase, Store {
   @override
   String toString() {
     return '''
-number: ${number}
+number: ${number},
+isLoading: ${isLoading}
     ''';
   }
 }

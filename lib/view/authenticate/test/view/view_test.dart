@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:idev/core/base/state/base_state.dart';
-import 'package:idev/view/authenticate/view_test/viewModel/test_view_model.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import '../../../../core/base/view/base_view.dart';
+import '../viewModel/test_view_model.dart';
 
 class ViewTest extends StatefulWidget {
   const ViewTest({super.key});
@@ -35,7 +35,7 @@ class _ViewTestState extends BaseState<ViewTest> {
       child: Observer(
         builder: (context) => Text(
           style: Theme.of(context).textTheme.titleLarge,
-          viewModel.number.toString(),
+          viewModel.isLoading.toString(),
         ),
       ),
     );
@@ -43,7 +43,7 @@ class _ViewTestState extends BaseState<ViewTest> {
 
   FloatingActionButton get floatingActionButtonNumberIncrement {
     return FloatingActionButton(
-      onPressed: () => viewModel.changeTheme(),
+      onPressed: () => viewModel.getSampleRequest(),
     );
   }
 }

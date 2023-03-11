@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:idev/core/init/notifier/provider_list.dart';
 import 'package:idev/core/init/notifier/theme_notifier.dart';
-import 'package:idev/view/authenticate/view_test/view/view_test.dart';
 import 'package:provider/provider.dart';
 
 import 'core/init/navigation/navigation_route.dart';
