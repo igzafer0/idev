@@ -27,16 +27,30 @@ class _ViewTestState extends BaseState<ViewTest> {
 
   Widget get scaffoldBody => Scaffold(
         floatingActionButton: floatingActionButtonNumberIncrement,
-        body: textNumber,
+        body: showData,
       );
 
-  Widget get textNumber {
+  Widget get showData {
+    return Observer(builder: (context) {
+      if (viewModel.isLoading) {
+        return loadingWidget;
+      }
+
+      return textData;
+    });
+  }
+
+  Widget get loadingWidget {
+    return const Center(
+      child: CircularProgressIndicator(),
+    );
+  }
+
+  Widget get textData {
     return Center(
-      child: Observer(
-        builder: (context) => Text(
-          style: Theme.of(context).textTheme.titleLarge,
-          viewModel.isLoading.toString(),
-        ),
+      child: Text(
+        style: Theme.of(context).textTheme.titleLarge,
+        viewModel.data.toString(),
       ),
     );
   }

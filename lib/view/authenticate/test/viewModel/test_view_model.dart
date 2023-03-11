@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
@@ -35,17 +36,15 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
     number++;
   }
 
+  String data = "";
+
   @action
   Future<void> getSampleRequest() async {
     isLoading = true;
 
     final response = await coreDio!.send<List<TestModel>, TestModel>('posts',
         type: HttpTypes.GET, parseModel: TestModel());
-    if (response.data is List<TestModel>) {
-      debugPrint("data ${response.data}");
-    } else {
-      debugPrint("data ${(response.error as BaseError).message}");
-    }
+
     isLoading = false;
   }
 

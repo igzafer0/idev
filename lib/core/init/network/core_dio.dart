@@ -41,11 +41,14 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
         case HttpStatus.ok:
         case HttpStatus.accepted:
           final model = _responseParser<R, T>(parseModel, response.data);
+
           return ResponseModel<R>(data: model);
         default:
           return ResponseModel(error: BaseError('message'));
       }
     } catch (ex) {
+      debugPrint("hayal $ex");
+
       return ResponseModel(error: BaseError(ex.toString()));
     }
   }

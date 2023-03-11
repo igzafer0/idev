@@ -21,7 +21,7 @@ class TestModel extends BaseModel<TestModel> with EquatableMixin {
   }
 
   @override
-  TestModel fromJson(Map<String, Object> json) {
+  TestModel fromJson(Map<String, dynamic> json) {
     return _$TestModelFromJson(json);
   }
 
