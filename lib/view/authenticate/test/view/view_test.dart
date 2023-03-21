@@ -51,13 +51,17 @@ class _ViewTestState extends BaseState<ViewTest> {
   }
 
   Widget get dataView {
-    return ListView.builder(
-        itemCount: viewModel.data.length,
-        itemBuilder: ((context, index) {
-          return Container(
-              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-              child: customListTile(index, context));
-        }));
+    if (viewModel.data.isNotEmpty) {
+      return ListView.builder(
+          itemCount: viewModel.data.length,
+          itemBuilder: ((context, index) {
+            return Container(
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                child: customListTile(index, context));
+          }));
+    }
+    viewModel.getSampleRequest();
+    return Container();
   }
 
   ListTile customListTile(int index, BuildContext context) {
