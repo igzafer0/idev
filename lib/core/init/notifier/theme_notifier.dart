@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:idev/core/init/theme/app_theme.dart';
 import 'package:idev/core/init/theme/app_theme_dark.dart';
 import 'package:idev/core/init/theme/app_theme_light.dart';
 

@@ -13,6 +13,5 @@ class AppThemeDark extends AppTheme {
   @override
   ThemeData get theme => ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
-        textTheme: const TextTheme(titleLarge: TextStyle(color: Colors.red)),
       );
 }

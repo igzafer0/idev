@@ -10,10 +10,12 @@ class TestModel extends BaseModel<TestModel> with EquatableMixin {
     this.userId,
     this.id,
     this.title,
+    this.body,
   });
   final int? userId;
   final int? id;
   final String? title;
+  final String? body;
 
   @override
   Map<String, dynamic> toJson() {
@@ -26,5 +28,5 @@ class TestModel extends BaseModel<TestModel> with EquatableMixin {
   }
 
   @override
-  List<Object?> get props => [userId, id, title];
+  List<Object?> get props => [userId, id, title, body];
 }

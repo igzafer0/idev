@@ -36,15 +36,13 @@ abstract class _TestViewModelBase with Store, BaseViewModel {
     number++;
   }
 
-  String data = "";
-
+  List<TestModel> data = [];
   @action
   Future<void> getSampleRequest() async {
     isLoading = true;
-
     final response = await coreDio!.send<List<TestModel>, TestModel>('posts',
         type: HttpTypes.GET, parseModel: TestModel());
-
+    data = response.data ?? [];
     isLoading = false;
   }
 
