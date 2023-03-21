@@ -30,9 +30,21 @@ class _ViewTestState extends BaseState<ViewTest> {
   }
 
   Widget get scaffoldBody => Scaffold(
+        appBar: appBar(),
         floatingActionButton: floatingActionButtonNumberIncrement,
-        body: showData,
+        body: SafeArea(child: testBody),
       );
+
+  Widget get testBody {
+    return showData;
+  }
+
+  AppBar appBar() {
+    return AppBar(
+      centerTitle: false,
+      title: const Text("Basic Tests"),
+    );
+  }
 
   Widget get showData {
     return Observer(builder: (context) {
