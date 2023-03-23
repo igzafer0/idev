@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:idev/core/components/card/not_found_navigation.dart';
+import 'package:idev/view/authenticate/register/view/register_view.dart';
 import '../../../view/authenticate/test/view/view_test.dart';
 import '../../constants/navigation/navigation_constants.dart';
 
@@ -11,7 +12,8 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       case NavigationConstants.DEFAULT:
-        return normalNavigate(const ViewTest(), NavigationConstants.DEFAULT);
+        return normalNavigate(
+            const RegisterView(), NavigationConstants.DEFAULT);
 
       case NavigationConstants.TEST_VIEW:
         return normalNavigate(const ViewTest(), NavigationConstants.TEST_VIEW);

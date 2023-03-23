@@ -12,6 +12,9 @@ class AppThemeLight extends AppTheme {
 
   @override
   ThemeData get theme => ThemeData.light().copyWith(
-        textTheme: const TextTheme(titleLarge: TextStyle(color: Colors.red)),
+        textTheme: const TextTheme(
+            titleLarge: TextStyle(color: Colors.red),
+            bodyMedium: TextStyle(color: Colors.black54),
+            bodyLarge: TextStyle(color: Colors.black)),
       );
 }

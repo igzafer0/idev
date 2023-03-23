@@ -48,8 +48,6 @@ class CoreDio with DioMixin implements Dio, ICoreDioNullSafety {
           return ResponseModel(error: BaseError('message'));
       }
     } catch (ex) {
-      debugPrint("hayal $ex");
-
       return ResponseModel(error: BaseError(ex.toString()));
     }
   }

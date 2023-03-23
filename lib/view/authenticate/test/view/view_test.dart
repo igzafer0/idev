@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:idev/core/base/state/base_state.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:idev/core/constants/enum/app_theme_enum.dart';
+import 'package:idev/core/extensions/context_extension.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/base/view/base_view.dart';
 
@@ -90,8 +91,8 @@ class _ViewTestState extends BaseState<ViewTest> {
         child: listTileHeader(index),
       ),
       subtitle: Text(viewModel.data[index].body.toString()),
-      textColor: context.watch<ThemeNotifier>().currentTheme.hintColor,
-      tileColor: context.watch<ThemeNotifier>().currentTheme.primaryColor,
+      textColor: context.textTheme.bodyLarge!.color,
+      tileColor: context.textTheme.bodyMedium!.color,
     );
   }
 
