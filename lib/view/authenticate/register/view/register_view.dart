@@ -35,7 +35,7 @@ class _RegisterViewState extends BaseState<RegisterView> {
   }
 
   Text get sloganText => Text(
-        "Dünyada Olup Biteni Gör",
+        "Dünyada Olup Biteni Gör!",
         style: Theme.of(context).textTheme.titleLarge,
       );
 
