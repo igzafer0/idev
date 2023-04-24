@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, overridden_fields
+
 abstract class IResponseModel<T> {
   T? data;
   IErrorModel? error;

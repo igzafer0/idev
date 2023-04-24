@@ -1,6 +1,5 @@
 // ignore_for_file: file_names
 
-import 'package:dio/dio.dart';
 import 'package:idev/core/base/model/base_model.dart';
 
 import '../../constants/enum/http_request_enum.dart';
